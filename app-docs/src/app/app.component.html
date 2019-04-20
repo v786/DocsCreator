@@ -1,0 +1,123 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <!-- Content here -->
+  <router-outlet></router-outlet>
+  <div class="container p-2">
+    <div class="row">
+      <div class="col-2 border border-light" style="background-color:darkslategray;">
+        <div class="row m-1">
+          <img
+            src="https://media.licdn.com/dms/image/C560BAQEF1GLo2-5ZJg/company-logo_400_400/0?e=1564012800&v=beta&t=gduEE-xI_P9HgDfhM9IkCnGKjJAfX_eBP_ky_P9UiSI"
+            alt="..." class="img-fluid img-thumbnail rounded mx-auto d-block" style="height: 6rem;">
+        </div>
+        <div class="row text-white">
+          <nav class="nav nav-pills flex-column border border-light m-2 mx-auto d-block">
+            <a class="nav-link active" href="#">
+              <div (click)="scrollTo('section1')">Section 1
+                <ng-container *ngIf="currentSection==='section1'">O</ng-container>
+              </div>
+            </a>
+            <a class="nav-link" href="#">
+              <div (click)="scrollTo('section2')">Section 2
+                <ng-container *ngIf="currentSection==='section2'">O</ng-container>
+              </div>
+            </a>
+            <a class="nav-link" href="#">
+              <div (click)="scrollTo('section3')">Section 3
+                <ng-container *ngIf="currentSection==='section3'">O</ng-container>
+              </div>
+            </a>
+            <a class="nav-link " href="#" tabindex="-1">
+              <div (click)="scrollTo('section4')">Section 4
+                <ng-container *ngIf="currentSection==='section4'">O</ng-container>
+              </div>
+            </a>
+            <a class="nav-link " href="#" tabindex="-1">
+              <div (click)="scrollTo('section5')">
+                <div class="nav-link active" *ngIf="currentSection==='section5'">
+                  Section 5
+                </div>
+                <div class="nav-link" *ngElse="">
+                  Section 5
+                </div>
+                <ng-container *ngIf="currentSection==='section5'">O</ng-container>
+              </div>
+            </a>
+            <a class="nav-link " href="#" tabindex="-1">
+              <div (click)="scrollTo('section6')">Section 6
+                <ng-container *ngIf="currentSection==='section6'">O</ng-container>
+              </div>
+            </a>
+            <a class="nav-link " href="#" tabindex="-1">
+              <div (click)="scrollTo('section7')">Section 7
+                <ng-container *ngIf="currentSection==='section7'">O</ng-container>
+              </div>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="row" id="parentDiv" scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)"
+          style="height:740px;overflow-y: scroll;">
+          <div class="row m-2" id="section1">
+            <div class="breadcrumb bg-info">
+              <h1>Section 1</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+          <div class="row m-2" id="section2">
+            <div class="breadcrumb bg-info">
+              <h1>Section 2</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+          <div class="row m-2" id="section3">
+            <div class="breadcrumb bg-info">
+              <h1>Section 3</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+          <div class="row m-2" id="section4">
+            <div class="breadcrumb bg-info">
+              <h1>Section 4</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+          <div class="row m-2" id="section5">
+            <div class="breadcrumb bg-info">
+              <h1>Section 5</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+          <div class="row m-2" id="section6">
+            <div class="breadcrumb bg-info">
+              <h1>Section 6</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+          <div class="row m-2" id="section7">
+            <div class="breadcrumb bg-info">
+              <h1>Section 7</h1>
+            </div>
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 bg-dark">
+        <div class="btn-group m-2" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary">JS</button>
+          <button type="button" class="btn btn-secondary">Python</button>
+          <button type="button" class="btn btn-secondary">PHP</button>
+        </div>
+        <div style="color: rgb(103, 102, 104);">
+          <div class="breadcrumb m-2">
+            <ng-container>{{currentSection}}</ng-container>
+          </div>
+          <div style="color: rgb(223, 223, 189);">
+            <lorem-ipsum></lorem-ipsum>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
